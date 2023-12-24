@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <h3>Import Products</h3>
+        <div class="container">
+            <div id="div1">
+                <p id="p1">Step 1: Select file</p>
+                <form id="step1">
+                    <input type="file" id="myfile" accept=".json, .csv">
+                    <p id="p1">Supported File Type(s): .CSV, .JSON </p>
+                </form>
+            </div>
+            <div id="div2">
+                <p id="p2">Step 2: Specify Format</p>
+                <form id="step2">
+                    <label for="Format">File Type: </label>
+                    <select name="Format" id="Format">
+                        <option value="json" selected="selected">JSON</option>
+                        <option value="csv">CSV</option>
+                    </select><br>
+                    <label for="Encoding">Character Encoding: </label>
+                    <select name="Encoding" id="Encoding">
+                        <option value="utf8" selected="selected">UTF-8</option>
+                        <option value="utf16be">UTF-16BE</option>
+                    </select><br>
+                    <label for="Delimiter">Delimiter</label>
+                    <select name="Delimiter" id="Delimiter">
+                        <option value="comma">Comma</option>
+                    </select><br>
+                </form>
+            </div>
+            <div id="div3">
+                <p id="p3">Step 3: Display Handling</p>
+                <p>Select the fields to be displayed</p>
+                <div class="step3">
+                    <div>
+                        <label>Available Fields</label><br>
+                        <select name="Available" id="Available" size="4">
+                            <option value="subcategory">Subcatagory</option>
+                            <option value="title">Title</option>
+                            <option value="price">Price</option>
+                            <option value="popularity">Popularity</option>
+                        </select>
+                    </div>
+                    <div id="button3">
+                        <button onclick="moveOptions('Available', 'used')"> >> </button>
+                        <button onclick="moveOptions('used', 'Available')"><<</button>
+                    </div>
+                    <div>
+                        <label>Fields to be Displayed</label><br>
+                        <select name="used" id="used" size="4"></select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="buttons">
+            <button id="next" onclick="onNext()">Next</button>
+            <button id="cancel">Cancel</button>
+        </div>
+        <table id="mytable" border="1">
+
+        </table>
+    </body>
+</html>
